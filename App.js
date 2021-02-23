@@ -2,10 +2,10 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-import MealsNavigator from "./navigation/MealsNavigator";
+import AppNavigator from "./navigation/MealsNavigator5";
 
 export default function App() {
-  return <MealsNavigator />;
+  return <AppNavigator />;
 }
 
 const styles = StyleSheet.create({
