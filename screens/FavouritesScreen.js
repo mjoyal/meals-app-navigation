@@ -18,7 +18,7 @@ export const ScreenOptions = navData => {
   
   return {
     headerTitle: "Favourites",
-    headerLeft: (
+    headerLeft: () => (
     <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
       <Item 
         title="menu" 

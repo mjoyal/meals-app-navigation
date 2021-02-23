@@ -12,11 +12,11 @@ const FiltersScreen = (props) => {
 };
 
 
-FiltersScreen.navigationOptions = navData => {
+export const ScreenOptions = navData => {
   
   return {
     headerTitle: "Filter Meals",
-    headerLeft: (
+    headerLeft: () => (
     <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
       <Item 
         title="menu" 

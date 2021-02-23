@@ -14,8 +14,9 @@ import Colors from '../constants/Colors';
 import CategoriesScreen, { ScreenOptions as CategoriesScreenOptions } from "../screens/CategoriesScreen";
 import CategoryMealsScreen, { ScreenOptions as CategoryMealsScreenOptions } from "../screens/CategoryMealsScreen";
 import MealDetailsScreen, { ScreenOptions as MealDetailScreenOptions } from "../screens/MealDetailScreen";
-import FavouritesScreen from '../screens/FavouritesScreen'; 
-import FiltersScreen from '../screens/FiltersScreen'; 
+import FavouritesScreen, { ScreenOptions as FavouritesScreenOptions } from '../screens/FavouritesScreen'; 
+import FiltersScreen, { ScreenOptions as FiltersScreenOptions} from '../screens/FiltersScreen'; 
+import DrawerLayout from 'react-native-gesture-handler/DrawerLayout';
 
 
 
@@ -60,8 +61,16 @@ const MealsNavigator = () => {
 const FavouritesNavigator = () => {
  return (
   <FavouritesStackNavigator.Navigator>
-    <FavouritesStackNavigator.Screen name="Favourites" component={FavouritesScreen}/>
-    <FavouritesStackNavigator.Screen name="MealDetails" component={MealDetailsScreen}/>
+    <FavouritesStackNavigator.Screen 
+      name="Favourites" 
+      component={FavouritesScreen}
+      options={FavouritesScreenOptions}  
+    />
+    <FavouritesStackNavigator.Screen 
+      name="MealDetails" 
+      component={MealDetailsScreen}
+      options={MealDetailScreenOptions}
+    />
   </FavouritesStackNavigator.Navigator>
  )
 }; 
@@ -69,15 +78,19 @@ const FavouritesNavigator = () => {
 const FiltersNavigator = () => {
   return (
     <FilterStackNavigator.Navigator>
-      <FilterStackNavigator.Screen name="Filters" component={FiltersScreen}/>
+      <FilterStackNavigator.Screen 
+        name="Filters" 
+        component={FiltersScreen}
+        options={FiltersScreenOptions}
+      />
     </FilterStackNavigator.Navigator>
   )
 }
 const TabNavigator = () => {
   return (
     <BottomTabNavigator.Navigator>
-      <BottomTabNavigator.Screen name="MealsNavigator" component={MealsNavigator}/>
-      <BottomTabNavigator.Screen name="FavouritesNavigator" component={FavouritesNavigator}/>
+      <BottomTabNavigator.Screen name="MealsNavigator" component={MealsNavigator} options={{tabBarLabel: 'Meals'}}/>
+      <BottomTabNavigator.Screen name="FavouritesNavigator" component={FavouritesNavigator} options={{tabBarLabel: 'Favourites'}}/>
     </BottomTabNavigator.Navigator>
   )
 }
@@ -85,7 +98,7 @@ const TabNavigator = () => {
 const MainNavigator = () => {
   return (
     <MainDrawerNavigator.Navigator>
-      <MainDrawerNavigator.Screen name="MealFavourites" component={TabNavigator}/>
+      <MainDrawerNavigator.Screen name="MealFavourites" component={TabNavigator} options={{drawerLabel: 'Meals'}} />
       <MainDrawerNavigator.Screen name="Filters" component={FiltersNavigator}/>
     </MainDrawerNavigator.Navigator>
   )
