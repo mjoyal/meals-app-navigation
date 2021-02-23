@@ -8,7 +8,7 @@ import InstructionItem from '../components/InstructionItem';
 
 
 
-const MealDetailsScreen = ({navigation, route}) => {
+const MealDetailsScreen = ({route}) => {
   const { mealId } = route.params; 
   const selectedMeal = MEALS.find(meal => meal.id === mealId); 
 

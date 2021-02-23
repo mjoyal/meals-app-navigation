@@ -14,7 +14,7 @@ const FavouritesScreen = ({navigation}) => {
   );
 };
 
-FavouritesScreen.navigationOptions = navData => {
+export const ScreenOptions = navData => {
   
   return {
     headerTitle: "Favourites",
