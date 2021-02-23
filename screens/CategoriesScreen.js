@@ -26,11 +26,11 @@ const CategoriesScreen = ({ navigation }) => {
   );
 };
 
-CategoriesScreen.navigationOptions = navData => {
+export const CategoriesScreenOptions = navData => {
   
   return {
     headerTitle: "Meal Categories",
-    headerLeft: (
+    headerLeft: () => (
     <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
       <Item 
         title="menu" 
@@ -60,3 +60,26 @@ const styles = StyleSheet.create({
 });
 
 export default CategoriesScreen;
+
+
+
+/**** REACT NAVIGATION 4 CONFIG  ****/
+
+// CategoriesScreen.navigationOptions = navData => {
+  
+//   return {
+//     headerTitle: "Meal Categories",
+//     headerLeft: (
+//     <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
+//       <Item 
+//         title="menu" 
+//         iconName='ios-menu' 
+//         onPress={() => {
+//           navData.navigation.toggleDrawer(); 
+//           console.log(navData.navigation)
+       
+//         }}/>
+//     </HeaderButtons>
+//   )
+//   }
+// };

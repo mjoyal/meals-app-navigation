@@ -29,3 +29,5 @@ CategoryMealsScreen.navigationOptions = (navigationData) => {
 
 
 export default CategoryMealsScreen;
+
+/**** REACT NAVIGATION 4 CONFIG  ****/
