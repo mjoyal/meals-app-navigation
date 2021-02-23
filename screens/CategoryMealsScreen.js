@@ -5,9 +5,8 @@ import { CATEGORIES, MEALS } from '../data/dummy-data';
 import MealList from '../components/MealList';
 
 const CategoryMealsScreen = ({ route, navigation }) => {
-  const { categoryId: catId } = route.params; 
+  const { categoryId: catId} = route.params; 
 
-  // const catId = navigation.getParam('categoryId'); 
   const meals = MEALS.filter((meal) => {
     return meal.categoryIds.includes(catId); 
   }); 
@@ -17,10 +16,10 @@ const CategoryMealsScreen = ({ route, navigation }) => {
   );
 };
 
-CategoryMealsScreen.navigationOptions = (navigationData) => {
-  const catId = navigationData.navigation.getParam('categoryId'); 
+export const ScreenOptions = ({navData, route}) => {
+  const { categoryId: catId } = route.params; 
   const selectedCategory = CATEGORIES.find(cat => cat.id === catId); 
-
+  
   return {
     headerTitle: selectedCategory.title, 
   }

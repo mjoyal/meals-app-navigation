@@ -14,9 +14,8 @@ const MealCard = ({itemData, navigation}) => {
   return (
     <TouchableOpacity 
     onPress={() => {
-      navigation.navigate({
-        routeName: 'MealDetails', 
-        params: { mealId: itemData.item.id }
+      navigation.navigate('MealDetails', {
+        mealId: itemData.item.id 
       })
     }}
     styles={styles.mealCard}>

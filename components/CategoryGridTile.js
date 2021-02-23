@@ -13,7 +13,7 @@ const CategoryGridTile = ({itemData, navigation}) => {
     style={styles.gridItem}
     onPress={() => {
       navigation.navigate('CategoryMeals', { 
-        params: { categoryId: itemData.item.id },
+        categoryId: itemData.item.id ,
       });
     }}
   >

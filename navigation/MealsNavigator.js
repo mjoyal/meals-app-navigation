@@ -13,12 +13,7 @@ import FiltersScreen from '../screens/FiltersScreen';
 
 import Colors from '../constants/Colors';
 
-const defaultStackOptions = {
-      headerStyle: {
-        backgroundColor: Colors.mainWhite,
-      },
-      headerTintColor: 'blue',
-}
+
 
 
 // configure different screens

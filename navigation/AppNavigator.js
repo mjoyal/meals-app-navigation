@@ -5,25 +5,43 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { Ionicons } from '@expo/vector-icons'
 import CustomHeaderButton from '../components/HeaderButton'
 import {HeaderButtons, Item} from 'react-navigation-header-buttons'; 
+import Colors from '../constants/Colors';
 
 // screens 
 
-import CategoriesScreen, { CategoriesScreenOptions } from "../screens/CategoriesScreen";
-import CategoryMealsScreen from "../screens/CategoryMealsScreen";
-import MealDetailsScreen from "../screens/MealDetailScreen";
+import CategoriesScreen, { ScreenOptions as CategoriesScreenOptions } from "../screens/CategoriesScreen";
+import CategoryMealsScreen, { ScreenOptions as CategoryMealsScreenOptions } from "../screens/CategoryMealsScreen";
+import MealDetailsScreen, { ScreenOptions as MealDetailScreenOptions } from "../screens/MealDetailScreen";
 
 const MealsStackNavigator = createStackNavigator(); 
 
+const defaultStackOptions = {
+  headerStyle: {
+    backgroundColor: Colors.mainWhite,
+  },
+  headerTintColor: 'blue',
+}
+
 const MealsNavigator = () => {
   return (
-    <MealsStackNavigator.Navigator>
+    <MealsStackNavigator.Navigator 
+      screenOptions={defaultStackOptions}
+    >
       <MealsStackNavigator.Screen 
         name="Categories" 
         component={CategoriesScreen}
         options={CategoriesScreenOptions}
         />
-      <MealsStackNavigator.Screen name="CategoryMeals" component={CategoryMealsScreen}/>
-      <MealsStackNavigator.Screen name="MealDetails" component={MealDetailsScreen}/>
+      <MealsStackNavigator.Screen 
+        name="CategoryMeals" 
+        component={CategoryMealsScreen}
+        options={CategoryMealsScreenOptions}
+      />
+      <MealsStackNavigator.Screen 
+        name="MealDetails" 
+        component={MealDetailsScreen}
+        options={MealDetailScreenOptions}
+      />
     </MealsStackNavigator.Navigator>
   )
 }; 

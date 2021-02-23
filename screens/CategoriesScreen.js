@@ -1,11 +1,7 @@
 import React from "react";
 import {
-  View,
-  Text,
-  Button,
   FlatList,
   StyleSheet,
-  TouchableOpacity,
 } from "react-native";
 
 import { CATEGORIES } from "../data/dummy-data";
@@ -26,7 +22,7 @@ const CategoriesScreen = ({ navigation }) => {
   );
 };
 
-export const CategoriesScreenOptions = navData => {
+export const ScreenOptions = navData => {
   
   return {
     headerTitle: "Meal Categories",

@@ -8,8 +8,8 @@ import InstructionItem from '../components/InstructionItem';
 
 
 
-const MealDetailsScreen = ({navigation}) => {
-  const mealId = navigation.getParam('mealId'); 
+const MealDetailsScreen = ({navigation, route}) => {
+  const { mealId } = route.params; 
   const selectedMeal = MEALS.find(meal => meal.id === mealId); 
 
   const ingredients = selectedMeal.ingredients.map((ingredient) => {
@@ -40,13 +40,14 @@ const MealDetailsScreen = ({navigation}) => {
   );
 };
 
- MealDetailsScreen.navigationOptions = (navigationData) => {
-  const mealId = navigationData.navigation.getParam('mealId'); 
+export const ScreenOptions = ({route}) => {
+
+  const { mealId } = route.params; 
   const selectedMeal = MEALS.find(meal => meal.id === mealId); 
   
   return {
     headerTitle: selectedMeal.title, 
-    headerRight: (
+    headerRight: () => (
     <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
       <Item title="fave" iconName="ios-star" onPress={() => {console.log('Favourite!')}}/>
     </HeaderButtons>
