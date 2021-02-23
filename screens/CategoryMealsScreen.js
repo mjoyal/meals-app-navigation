@@ -4,9 +4,10 @@ import { CATEGORIES, MEALS } from '../data/dummy-data';
 
 import MealList from '../components/MealList';
 
-const CategoryMealsScreen = ({ navigation }) => {
+const CategoryMealsScreen = ({ route, navigation }) => {
+  const { categoryId: catId } = route.params; 
 
-  const catId = navigation.getParam('categoryId'); 
+  // const catId = navigation.getParam('categoryId'); 
   const meals = MEALS.filter((meal) => {
     return meal.categoryIds.includes(catId); 
   }); 

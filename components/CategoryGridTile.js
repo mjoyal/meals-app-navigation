@@ -12,8 +12,7 @@ const CategoryGridTile = ({itemData, navigation}) => {
   <TouchableOpacity
     style={styles.gridItem}
     onPress={() => {
-      navigation.navigate({ 
-        routeName: "CategoryMeals", 
+      navigation.navigate('CategoryMeals', { 
         params: { categoryId: itemData.item.id },
       });
     }}
