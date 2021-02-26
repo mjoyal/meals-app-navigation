@@ -16,7 +16,7 @@ import CategoryMealsScreen, { ScreenOptions as CategoryMealsScreenOptions } from
 import MealDetailsScreen, { ScreenOptions as MealDetailScreenOptions } from "../screens/MealDetailScreen";
 import FavouritesScreen, { ScreenOptions as FavouritesScreenOptions } from '../screens/FavouritesScreen'; 
 import FiltersScreen, { ScreenOptions as FiltersScreenOptions} from '../screens/FiltersScreen'; 
-import DrawerLayout from 'react-native-gesture-handler/DrawerLayout';
+
 
 
 
@@ -89,8 +89,24 @@ const FiltersNavigator = () => {
 const TabNavigator = () => {
   return (
     <BottomTabNavigator.Navigator>
-      <BottomTabNavigator.Screen name="MealsNavigator" component={MealsNavigator} options={{tabBarLabel: 'Meals'}}/>
-      <BottomTabNavigator.Screen name="FavouritesNavigator" component={FavouritesNavigator} options={{tabBarLabel: 'Favourites'}}/>
+      <BottomTabNavigator.Screen 
+        name="MealsNavigator" 
+        component={MealsNavigator} 
+        options={{
+          tabBarLabel: ' ', 
+          tabBarIcon: (tabInfo) => {
+          return <Ionicons  name='ios-restaurant' size={25}  color={tabInfo.tintColor}/>
+        }}}
+      />
+      <BottomTabNavigator.Screen 
+        name="FavouritesNavigator" 
+        component={FavouritesNavigator} 
+        options={{ 
+        tabBarLabel: ' ',
+        tabBarIcon: (tabInfo) => {
+          return <Ionicons  name='ios-star' size={25}  color={tabInfo.tintColor}/>
+        }}}
+      />
     </BottomTabNavigator.Navigator>
   )
 }

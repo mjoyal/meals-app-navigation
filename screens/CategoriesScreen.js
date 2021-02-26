@@ -2,6 +2,8 @@ import React from "react";
 import {
   FlatList,
   StyleSheet,
+  Button,
+  Alert,
 } from "react-native";
 
 import { CATEGORIES } from "../data/dummy-data";
@@ -16,6 +18,7 @@ const CategoriesScreen = ({ navigation }) => {
       <CategoryGridTile itemData={itemData} navigation={navigation}/>
     );
   };
+
 
   return (
     <FlatList numColumns={2} data={CATEGORIES} renderItem={renderGridItem} />
